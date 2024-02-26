@@ -261,7 +261,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>88</span>
+      <span>102</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -294,16 +294,22 @@
 </ul></li>
 </ul>
 <p>The IMU's X-axis, the momentum wheel's axis of rotation, and the balancing edge are all in the same plane. As a result: <span class="math display">\[
-\begin{align*}
+\begin{align}
     \left\{
-        \begin{array}{l}
-        \theta = angle_x - angle_e \\[1ex]
-        \theta&#39; = gyro_x \\[1ex]
-        \omega&#39; = motorspeed_x
-    \end{array}
+        \begin{aligned}
+        \theta &amp;= angle_x - angle_e \\[1ex]
+        \theta&#39; &amp;= gyro_x \\[1ex]
+        \omega&#39; &amp;= motorspeed_x
+        \end{aligned}
     \right.
-\end{align*}
-\]</span> <span id="more"></span></p>
+\end{align}
+\]</span> <span class="math display">\[
+\begin{equation}
+    Lqr = (angle_x - angle_e) \times  k_p + gyro_x \times k_v + motorspeed_x \times \omega&#39;
+\end{equation}
+\]</span></p>
+<hr />
+<span id="more"></span>
 
     </div>
 
