@@ -6,7 +6,7 @@
     <content><![CDATA[<p>This article briefly outlines the principle of balance control for the entire cube.</p>
 <hr />
 <h2 id="unilateral-balance">#Unilateral Balance</h2>
-<p><img src="/images/Control-Theory/Unilateral.jpg" style="zoom:20%;" align=center/></p>
+<p><img src="/images/Control-Theory/Unilateral.jpg" style="zoom:18%;" align=center/></p>
 <ul>
 <li><p>System State Variables:</p>
 <ul>
@@ -19,22 +19,57 @@
 </ul></li>
 </ul>
 <p>The IMU's X-axis, the momentum wheel's axis of rotation, and the balancing edge are all in the same plane. As a result: <span class="math display">\[
-\begin{align}
+\begin{align*}
     \left\{
-        \begin{aligned}
-        \theta &amp;= angle_x - angle_e \\[1ex]
-        \theta&#39; &amp;= gyro_x \\[1ex]
-        \omega&#39; &amp;= motorspeed_x
-        \end{aligned}
+        \begin{array}{l}
+        \ \theta = angle_x - angle_e  \\[1ex]
+        \ \theta&#39; = gyro_x \\[1ex]
+        \ \omega&#39; = motorspeed_x \\[1ex]
+    \end{array}
     \right.
-\end{align}
+\end{align*}
 \]</span> <span class="math display">\[
 \begin{equation}
-    Lqr = (angle_x - angle_e) \times  k_p + gyro_x \times k_v + motorspeed_x \times \omega&#39;
+    \Rightarrow \quad Lqr = (angle_x - angle_e) \times  k_p + gyro_x \times k_v + motorspeed_x \times k_s
 \end{equation}
 \]</span></p>
 <hr />
 <span id="more"></span>
+<h2 id="corner-balance">#Corner Balance</h2>
+<p>The basic principle is to add control of the Y-axis to unilateral balance.</p>
+<p><img src="/images/Control-Theory/Corner.jpg" style="zoom:15%;" align=center/></p>
+<p>Assuming the current posture is a point balance. Establish a coordinate system based on the three-axis direction of the IMU, with the origin coinciding with the cube's balanced corner. The projections of the momentum wheel center onto the X-Y plane are respectively CH1, CH2, CH3.</p>
+<p><img src="/images/Control-Theory/Model.jpg" style="zoom:5%;" align=center/></p>
+<p>Following equations can be derived according to the model above: <span class="math display">\[
+\begin{align*}
+    \left\{
+        \begin{array}{l}
+        \ s_x = s_{ch2} - (s_{ch3} + s_{ch1}) \cdot sin(30^\circ)  \\[1ex]
+        \ s_y = (s_{ch3} - s_{ch1}) \cdot cos(30^\circ) \\[1ex]
+        \ s_z = s_{ch1} + s_{ch2} + s_{ch3} \\[1ex]
+    \end{array}
+    \right.
+\end{align*}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+    \Rightarrow \quad L(qr)_n = (angle_n - angle_{ne}) \times  k_{np} + gyro_n \times k_{nv}+ s_n \times k_{ns} \ (n = x, y, z)
+\end{equation}
+\]</span></p>
+<hr />
+<h2 id="regression-calculation">#Regression Calculation</h2>
+<p>Inverse calculation from x, y control to motor speed}From the LQR controller equations and geometry relationships.</p>
+<p><span class="math display">\[
+\begin{align*}
+    \left\{
+        \begin{array}{l}
+        \ S_{CH1} = -L_x \cdot sin(30^\circ) - L_y \cdot cos(30^\circ) + \frac{1}{3} L_z  \\[1ex]
+        \ S_{CH2} = L_x + \frac{1}{3} L_z \\[1ex]
+        \ S_{CH3} = -L_x \cdot sin(30^\circ) + L_y \cdot cos(30^\circ) + \frac{1}{3} L_z \\[1ex]
+    \end{array}
+    \right.
+\end{align*}
+\]</span></p>
 ]]></content>
       <categories>
         <category>Theory</category>

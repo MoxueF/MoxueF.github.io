@@ -235,7 +235,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2024-02-26 06:10:30" itemprop="dateCreated datePublished" datetime="2024-02-26T06:10:30+00:00">2024-02-26</time>
+      <time title="Created: 2024-02-26 14:43:19" itemprop="dateCreated datePublished" datetime="2024-02-26T14:43:19+00:00">2024-02-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -356,7 +356,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>102</span>
+      <span>341</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -377,7 +377,7 @@
           <p>This article briefly outlines the principle of balance control for the entire cube.</p>
 <hr />
 <h2 id="unilateral-balance">#Unilateral Balance</h2>
-<p><img src="/images/Control-Theory/Unilateral.jpg" style="zoom:20%;" align=center/></p>
+<p><img src="/images/Control-Theory/Unilateral.jpg" style="zoom:18%;" align=center/></p>
 <ul>
 <li><p>System State Variables:</p>
 <ul>
@@ -390,18 +390,18 @@
 </ul></li>
 </ul>
 <p>The IMU's X-axis, the momentum wheel's axis of rotation, and the balancing edge are all in the same plane. As a result: <span class="math display">\[
-\begin{align}
+\begin{align*}
     \left\{
-        \begin{aligned}
-        \theta &amp;= angle_x - angle_e \\[1ex]
-        \theta&#39; &amp;= gyro_x \\[1ex]
-        \omega&#39; &amp;= motorspeed_x
-        \end{aligned}
+        \begin{array}{l}
+        \ \theta = angle_x - angle_e  \\[1ex]
+        \ \theta&#39; = gyro_x \\[1ex]
+        \ \omega&#39; = motorspeed_x \\[1ex]
+    \end{array}
     \right.
-\end{align}
+\end{align*}
 \]</span> <span class="math display">\[
 \begin{equation}
-    Lqr = (angle_x - angle_e) \times  k_p + gyro_x \times k_v + motorspeed_x \times \omega&#39;
+    \Rightarrow \quad Lqr = (angle_x - angle_e) \times  k_p + gyro_x \times k_v + motorspeed_x \times k_s
 \end{equation}
 \]</span></p>
 <hr />
@@ -558,14 +558,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Word count total: </span>
-    <span title="Word count total">0k</span>
+    <span title="Word count total">1k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">2 mins.</span>
+    <span title="Reading time total">3 mins.</span>
   </span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
