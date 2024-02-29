@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Automatic Control Principles</title>
-    <url>/2024/02/26/Control-Theory/</url>
+    <url>/2024/02/04/Control-Theory/</url>
     <content><![CDATA[<p>This article briefly outlines the principle of balance control for the entire cube.</p>
 <hr />
 <h2 id="unilateral-balance">#Unilateral Balance</h2>
@@ -58,7 +58,7 @@
 \]</span></p>
 <hr />
 <h2 id="regression-calculation">#Regression Calculation</h2>
-<p>Inverse calculation from x, y control to motor speed}From the LQR controller equations and geometry relationships.</p>
+<p>Inverse calculation from x, y control to motor speed from the LQR controller equations and geometry relationships.</p>
 <p><span class="math display">\[
 \begin{align*}
     \left\{
@@ -77,7 +77,7 @@
   </entry>
   <entry>
     <title>Intro</title>
-    <url>/2024/02/26/Intro/</url>
+    <url>/2024/02/29/Intro/</url>
     <content><![CDATA[<h3 id="embarking-on-a-robotic-revolution"><strong>#Embarking on a Robotic Revolution</strong></h3>
 <p>This blog chronicles the evolution of our project, Cubli, under the meticulous guidance of our Academic Advisors, Dr. Simon Maher and Dr. Barry Smith. Our team comprises Sidharth Babani, Feijie Jia, Yuanpeng Li, and Shaoxiang Wang (Sort alphabetically by last name) .</p>
 <hr />
@@ -112,6 +112,38 @@
 <li><strong>Sidharth Babani</strong>, besides documenting our journey, he delved into system design and control principle. His role encompasses the theories that form the foundation of all software and hardware, intertwining with every aspect of the project.</li>
 </ul>
 <p>Each member will explain the content they are responsible for during the specific weekly meetings, ensuring that the entire team has a comprehensive understanding of the project.</p>
+]]></content>
+      <categories>
+        <category>Weekly Activities</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Week 1: Order Placement &amp; PCB Soldering</title>
+    <url>/2024/02/04/Week-1/</url>
+    <content><![CDATA[<p>Week 0 refers to the first week of semester 2: [01.29 - 02.04]</p>
+<p>Normal Group Meeting: 02.03.2024</p>
+<h2 id="order-placement">#Order Placement</h2>
+<p>This week mainly witnessed many orders being placed and delivered. The PCB Orders are quoted from <a href="https://uk.beta-layout.com/">Beta LAYOUT</a>, and other essential chips, SMD components and peripherals are ordered through <a href="https://www.digikey.co.uk/">DigiKey</a> and <a href="https://www.lcsc.com/">LCSC Electronics</a>.</p>
+<p>Here is one of the quotes once placed:</p>
+<p><img src="/images/Week-1/Layout.jpg" style="zoom:65%;" align=center/></p>
+<p>It must be emphasized that the quality of the PCBs are really good :)</p>
+<hr />
+<h2 id="pcbs-soldering">#PCBs Soldering</h2>
+<p>All the PCBs are of the 0402 package type, which make it rather hard for us to soldering them. Fortunately, Feijie Jia has ordered solder paste stencil, which makes the process a little bit simplified ---- but only the other four PCBs.</p>
+<p>For the 6-layer main control board, it's too complicated for us to solder them by hands, as you can see the board below: <img src="/images/Week-1/MCB.jpg" style="zoom:65%;" align=center/></p>
+<p>Dr. Barry has led us to the university PCB labs for sake of any possible help, but the staff politely declined at the first glance. As a result, Feijie planned to get our PCBs populated from a factory, which should and will be done as soon as possible.</p>
+<p>Our sessions were not just productive but also moments of learning. Yuanpeng Li and Feijie Jia meticulous worked on the assembly. Shaoxiang Wang and Sidharth conducted the initial software tests.</p>
+<hr />
+<h3 id="next-week-plan">#Next Week Plan</h3>
+<ul>
+<li>Present a layout for poster</li>
+<li>Place a surface mount technology for the MCB</li>
+<li>Continuously working on the hardware and software learning parts.</li>
+</ul>
+<hr />
+<h3 id="theory-study">#Theory Study</h3>
+<p>This week, we primarily studied the most basic control principles of Cubli, including some mathematical modeling and analysis. For more information, please visit <a href="https://moxuef.github.io/2024/02/26/Control-Theory/">Automatic Control Principles</a>.</p>
+<hr />
 ]]></content>
       <categories>
         <category>Weekly Activities</category>

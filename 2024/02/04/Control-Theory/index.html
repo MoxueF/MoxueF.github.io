@@ -22,27 +22,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"moxuef.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="#Embarking on a Robotic Revolution This blog chronicles the evolution of our project, Cubli, under the meticulous guidance of our Academic Advisors, Dr. Simon Maher and Dr. Barry Smith. Our team compr">
+    <meta name="description" content="This article briefly outlines the principle of balance control for the entire cube.  #Unilateral Balance   System State Variables:  Cube Angle: \(\theta\) Cube Angular Velocity: \(\theta&#39;\)  Syste">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Intro">
-<meta property="og:url" content="https://moxuef.github.io/2024/02/26/Intro/index.html">
+<meta property="og:title" content="Automatic Control Principles">
+<meta property="og:url" content="https://moxuef.github.io/2024/02/04/Control-Theory/index.html">
 <meta property="og:site_name" content="Cubli">
-<meta property="og:description" content="#Embarking on a Robotic Revolution This blog chronicles the evolution of our project, Cubli, under the meticulous guidance of our Academic Advisors, Dr. Simon Maher and Dr. Barry Smith. Our team compr">
+<meta property="og:description" content="This article briefly outlines the principle of balance control for the entire cube.  #Unilateral Balance   System State Variables:  Cube Angle: \(\theta\) Cube Angular Velocity: \(\theta&#39;\)  Syste">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-02-26T14:43:19.792Z">
-<meta property="article:modified_time" content="2024-02-26T14:43:19.792Z">
+<meta property="og:image" content="https://moxuef.github.io/images/Control-Theory/Unilateral.jpg">
+<meta property="og:image" content="https://moxuef.github.io/images/Control-Theory/Corner.jpg">
+<meta property="og:image" content="https://moxuef.github.io/images/Control-Theory/Model.jpg">
+<meta property="article:published_time" content="2024-02-04T01:47:03.000Z">
+<meta property="article:modified_time" content="2024-02-04T01:47:03.000Z">
 <meta property="article:author" content="UoL Y2 Project Group 2P45">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://moxuef.github.io/images/Control-Theory/Unilateral.jpg">
 
 
-<link rel="canonical" href="https://moxuef.github.io/2024/02/26/Intro/">
+<link rel="canonical" href="https://moxuef.github.io/2024/02/04/Control-Theory/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://moxuef.github.io/2024/02/26/Intro/","path":"2024/02/26/Intro/","title":"Intro"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://moxuef.github.io/2024/02/04/Control-Theory/","path":"2024/02/04/Control-Theory/","title":"Automatic Control Principles"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Intro | Cubli</title>
+<title>Automatic Control Principles | Cubli</title>
   
 
 
@@ -93,7 +97,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-schedule"><a href="/archives/" rel="section"><i class="fa fa-calender fa-fw"></i>Schedule</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -158,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -211,7 +215,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://moxuef.github.io/2024/02/26/Intro/">
+    <link itemprop="mainEntityOfPage" href="https://moxuef.github.io/2024/02/04/Control-Theory/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -224,12 +228,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Intro | Cubli">
+      <meta itemprop="name" content="Automatic Control Principles | Cubli">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Intro
+          Automatic Control Principles
         </h1>
 
         <div class="post-meta-container">
@@ -240,7 +244,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2024-02-26 14:43:19" itemprop="dateCreated datePublished" datetime="2024-02-26T14:43:19+00:00">2024-02-26</time>
+      <time title="Created: 2024-02-04 01:47:03" itemprop="dateCreated datePublished" datetime="2024-02-04T01:47:03+00:00">2024-02-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -248,7 +252,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Navigation/" itemprop="url" rel="index"><span itemprop="name">Navigation</span></a>
+          <a href="/categories/Theory/" itemprop="url" rel="index"><span itemprop="name">Theory</span></a>
         </span>
     </span>
 
@@ -259,7 +263,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>84</span>
+      <span>341</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -276,16 +280,73 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="embarking-on-a-robotic-revolution"><strong>#Embarking on a Robotic Revolution</strong></h3>
-<p>This blog chronicles the evolution of our project, Cubli, under the meticulous guidance of our Academic Advisors, Dr. Simon Maher and Dr. Barry Smith. Our team comprises Sidharth Babani, Feijie Jia, Yuanpeng Li, and Shaoxiang Wang (Sort alphabetically by last name) .</p>
+    <div class="post-body" itemprop="articleBody"><p>This article briefly outlines the principle of balance control for the entire cube.</p>
 <hr />
-<h3 id="navigation">#Navigation</h3>
+<h2 id="unilateral-balance">#Unilateral Balance</h2>
+<p><img src="/images/Control-Theory/Unilateral.jpg" style="zoom:18%;" align=center/></p>
 <ul>
-<li><p>To explore more about this project, navigate to the <strong><a href="https://moxuef.github.io/about/">About</a></strong> section.</p></li>
-<li><p>For insights into our progress and updates, please visit the <strong><a href="https://moxuef.github.io/categories/Weekly-Activities/">Weekly Activities</a></strong> category.</p></li>
-<li><p>For detailed explanations and theoretical foundations, direct your attention to the <strong><a href="https://moxuef.github.io/categories/Theory/">Theory</a></strong> section.</p></li>
+<li><p>System State Variables:</p>
+<ul>
+<li><p>Cube Angle: <span class="math inline">\(\theta\)</span></p></li>
+<li><p>Cube Angular Velocity: <span class="math inline">\(\theta&#39;\)</span></p></li>
+</ul></li>
+<li><p>System Control Variable:</p>
+<ul>
+<li>Momentum Wheel Angular Velocity: <span class="math inline">\(\omega\)</span></li>
+</ul></li>
 </ul>
+<p>The IMU's X-axis, the momentum wheel's axis of rotation, and the balancing edge are all in the same plane. As a result: <span class="math display">\[
+\begin{align*}
+    \left\{
+        \begin{array}{l}
+        \ \theta = angle_x - angle_e  \\[1ex]
+        \ \theta&#39; = gyro_x \\[1ex]
+        \ \omega&#39; = motorspeed_x \\[1ex]
+    \end{array}
+    \right.
+\end{align*}
+\]</span> <span class="math display">\[
+\begin{equation}
+    \Rightarrow \quad Lqr = (angle_x - angle_e) \times  k_p + gyro_x \times k_v + motorspeed_x \times k_s
+\end{equation}
+\]</span></p>
 <hr />
+<span id="more"></span>
+<h2 id="corner-balance">#Corner Balance</h2>
+<p>The basic principle is to add control of the Y-axis to unilateral balance.</p>
+<p><img src="/images/Control-Theory/Corner.jpg" style="zoom:15%;" align=center/></p>
+<p>Assuming the current posture is a point balance. Establish a coordinate system based on the three-axis direction of the IMU, with the origin coinciding with the cube's balanced corner. The projections of the momentum wheel center onto the X-Y plane are respectively CH1, CH2, CH3.</p>
+<p><img src="/images/Control-Theory/Model.jpg" style="zoom:5%;" align=center/></p>
+<p>Following equations can be derived according to the model above: <span class="math display">\[
+\begin{align*}
+    \left\{
+        \begin{array}{l}
+        \ s_x = s_{ch2} - (s_{ch3} + s_{ch1}) \cdot sin(30^\circ)  \\[1ex]
+        \ s_y = (s_{ch3} - s_{ch1}) \cdot cos(30^\circ) \\[1ex]
+        \ s_z = s_{ch1} + s_{ch2} + s_{ch3} \\[1ex]
+    \end{array}
+    \right.
+\end{align*}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+    \Rightarrow \quad L(qr)_n = (angle_n - angle_{ne}) \times  k_{np} + gyro_n \times k_{nv}+ s_n \times k_{ns} \ (n = x, y, z)
+\end{equation}
+\]</span></p>
+<hr />
+<h2 id="regression-calculation">#Regression Calculation</h2>
+<p>Inverse calculation from x, y control to motor speed from the LQR controller equations and geometry relationships.</p>
+<p><span class="math display">\[
+\begin{align*}
+    \left\{
+        \begin{array}{l}
+        \ S_{CH1} = -L_x \cdot sin(30^\circ) - L_y \cdot cos(30^\circ) + \frac{1}{3} L_z  \\[1ex]
+        \ S_{CH2} = L_x + \frac{1}{3} L_z \\[1ex]
+        \ S_{CH3} = -L_x \cdot sin(30^\circ) + L_y \cdot cos(30^\circ) + \frac{1}{3} L_z \\[1ex]
+    \end{array}
+    \right.
+\end{align*}
+\]</span></p>
 
     </div>
 
@@ -299,11 +360,14 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/02/26/Control-Theory/" rel="prev" title="Automatic Control Principles">
-                  <i class="fa fa-angle-left"></i> Automatic Control Principles
+                <a href="/2024/01/27/Week-0/" rel="prev" title="Week 0: Timeline Planning & Role Allocation">
+                  <i class="fa fa-angle-left"></i> Week 0: Timeline Planning & Role Allocation
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2024/02/04/Week-1/" rel="next" title="Week 1: Order Placement & PCB Soldering">
+                  Week 1: Order Placement & PCB Soldering <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -342,7 +406,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">3 mins.</span>
+    <span title="Reading time total">4 mins.</span>
   </span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
@@ -396,7 +460,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
