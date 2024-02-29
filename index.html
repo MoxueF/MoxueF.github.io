@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -235,7 +235,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2024-02-29 09:38:32" itemprop="dateCreated datePublished" datetime="2024-02-29T09:38:32+00:00">2024-02-29</time>
+      <time title="Created: 2024-02-29 17:26:58" itemprop="dateCreated datePublished" datetime="2024-02-29T17:26:58+00:00">2024-02-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -281,6 +281,127 @@
 <li><p>For insights into our progress and updates, please visit the <strong><a href="https://moxuef.github.io/categories/Weekly-Activities/">Weekly Activities</a></strong> category.</p></li>
 <li><p>For detailed explanations and theoretical foundations, direct your attention to the <strong><a href="https://moxuef.github.io/categories/Theory/">Theory</a></strong> section.</p></li>
 </ul>
+<hr />
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://moxuef.github.io/2024/02/12/Hardware-Design/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="UoL Y2 Project Group 2P45">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubli">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cubli">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/02/12/Hardware-Design/" class="post-title-link" itemprop="url">Hardware Design</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-02-12 01:04:29" itemprop="dateCreated datePublished" datetime="2024-02-12T01:04:29+00:00">2024-02-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Theory/" itemprop="url" rel="index"><span itemprop="name">Theory</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>145</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>This article briefly outlines the design principle of all the PCB applied in this cube.</p>
+<hr />
+<h2 id="main-control-board-mcb">#Main Control Board (MCB)</h2>
+<p>The entire main control board can be simply divided into two major parts: signal communication and power supply. The main components of each part are as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Signal Line</th>
+<th style="text-align: center;">Power Line</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="/images/Hardware-Design/Signal.jpg" style="zoom:25%;" align=center/></td>
+<td style="text-align: center;"><img src="/images/Hardware-Design/Battery.jpg" style="zoom:25%;" align=center/></td>
+</tr>
+</tbody>
+</table>
+<p>Simply put, the main control PCB provides:</p>
+<ul>
+<li>2 x ESP32s as Microprocessors -- ①</li>
+<li>3-channel brushless FOC (Field Oriented Control) drive, 12V input -- ②</li>
+<li>A circuit for boosting a 5V input to charge a 3S lithium battery -- ③</li>
+<li>A 3S lithium battery charge and discharge balancing circuit -- ④</li>
+<li>Button input and indicator light output -- ⑤</li>
+<li>CAN communication between MCU1 and MCU2 -- ⑥</li>
+</ul>
+<p><img src="../images/Hardware-Design/MCB.jpg" style="zoom:55%;" align=center/></p>
 <hr />
 
       
@@ -681,7 +802,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">4 mins.</span>
+    <span title="Reading time total">5 mins.</span>
   </span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
