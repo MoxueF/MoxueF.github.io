@@ -105,8 +105,47 @@
 <li>Button input and indicator light output -- ⑤</li>
 <li>CAN communication between MCU1 and MCU2 -- ⑥</li>
 </ul>
-<p><img src="../images/Hardware-Design/MCB.jpg" style="zoom:55%;" align=center/></p>
+<p><img src="/images/Hardware-Design/MCB.jpg" style="zoom:55%;" align=center/></p>
 <hr />
+<span id="more"></span>
+<h3 id="motor-electronic-speed-controller-esc">#Motor Electronic Speed Controller (ESC）</h3>
+<p>Three TI DRV8313 driver chips are applied for receiving signals from a microcontroller and accordingly adjusting the phase and frequency of the three-phase power supply to drive the motor rotation. Following is a simple schematic provided on the <a href="https://www.ti.com/lit/gpn/drv8313">data sheet</a> by TEXAS INSTRUMENT.</p>
+<p><img src="/images/Hardware-Design/ESC.jpg" style="zoom:60%;" align=center/></p>
+<hr />
+<h3 id="v-to-5v-5v-to-3.3v-step-down-module">#12V-to-5V &amp; 5V-to-3.3V Step-Down Module</h3>
+<h4 id="v-to-5v-tps5430">##12V-to-5V (<a href="https://www.ti.com/lit/gpn/tps5430">TPS5430</a>)</h4>
+<p>This module is dedicated to stepping down the 12V power supply from a 3S lithium battery to 5V, thereby powering the SOP8, which is a high-speed CAN bus transceiver chip. At the same time, it also serves as the input for further stepping down from 5V to 3.3V.</p>
+<h4 id="v-to-3.3vams1117">##5V-to-3.3V(<a href="http://www.advanced-monolithic.com/pdf/ds1117.pdf">AMS1117</a>)</h4>
+<p>The AMS1117 regulator chip is used to step down the 5V input to 3.3V. The 3.3V power supply is crucial as it is responsible for powering all the following chips:</p>
+<ul>
+<li>2 ESP32 microprocessor chips</li>
+<li>A MPU6050 chip</li>
+<li>Three motor magnetic encoder chips AS5600</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">12V to 5V @ 3A</th>
+<th style="text-align: center;">5V to 3.3V @ 1A</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="/images/Hardware-Design/12to5.jpg" style="zoom:55%;" align=center/></td>
+<td style="text-align: center;"><img src="/images/Hardware-Design/5to3.jpg" style="zoom:55%;" align=center/></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="battery-control">#Battery Control</h2>
+<p>The battery control section is mainly divided into two parts: a 5V-to-12V boost charging module and a battery balancer.</p>
+<p>The former one is a bit complicated and will not be covered in this blog. All we should know is that this module applies a <a href="https://pdf1.alldatasheet.com/datasheet-pdf/view/1133224/CONSONANCE/CN3300.html">CN3300</a></p>
+<p>battery power management chip,</p>
+<p>For the latter part: #### ##Battery Balancer</p>
+<p>Since there are 3 lithium batteries, the main control board includes a passive balancing circuit as follows:</p>
+<p><img src="/images/Hardware-Design/BB.jpg" style="zoom:65%;" align=center/></p>
+<p>n a series battery pack, especially in lithium-ion battery packs, even under the same initial conditions, battery cells can gradually develop voltage differences due to aging speed, temperature differences, and production variances. If not balanced, some battery cells may become overcharged or over-discharged, leading to battery damage or decreased performance.</p>
+<p>The IC determines whether to activate the corresponding balancing MOSFETs to balance the battery by continuously monitoring the voltage between VDD and VSS. When necessary, it drains current from the battery cell through internal transistors to an external resistor (RBAL1, RBAL2, RBAL3), thereby reducing the voltage of that cell.</p>
 ]]></content>
       <categories>
         <category>Theory</category>
@@ -114,7 +153,7 @@
   </entry>
   <entry>
     <title>Intro</title>
-    <url>/2024/02/29/Intro/</url>
+    <url>/2024/03/01/Intro/</url>
     <content><![CDATA[<h3 id="embarking-on-a-robotic-revolution"><strong>#Embarking on a Robotic Revolution</strong></h3>
 <p>This blog chronicles the evolution of our project, Cubli, under the meticulous guidance of our Academic Advisors, Dr. Simon Maher and Dr. Barry Smith. Our team comprises Sidharth Babani, Feijie Jia, Yuanpeng Li, and Shaoxiang Wang (Sort alphabetically by last name) .</p>
 <hr />
@@ -165,6 +204,7 @@
 <p><img src="/images/Week-1/Layout.jpg" style="zoom:65%;" align=center/></p>
 <p>It must be emphasized that the quality of the PCBs are really good :)</p>
 <hr />
+<span id="more"></span>
 <h2 id="pcbs-soldering">#PCBs Soldering</h2>
 <p>All the PCBs are of the 0402 package type, which make it rather hard for us to soldering them. Fortunately, Feijie Jia has ordered solder paste stencil, which makes the process a little bit simplified ---- but only the other four PCBs.</p>
 <p>For the 6-layer main control board, it's too complicated for us to solder them by hands, as you can see the board below: <img src="/images/Week-1/MCB.jpg" style="zoom:65%;" align=center/></p>
