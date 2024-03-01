@@ -156,6 +156,18 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
       </categories>
   </entry>
   <entry>
+    <title>”Firmware Diagram“</title>
+    <url>/2024/02/23/Firmware-Diagram/</url>
+    <content><![CDATA[<p>This article includes a pdf for the whole function of MCU1 Firmware the cube.</p>
+<hr />
+<p><img src="/images/Firmware-Diagram/Cubli Source Code.jpg" style="zoom:100%;" align=center/></p>
+<p>For full file, please go to <a href="/images/Firmware-Diagram/Cubli%20Source%20Code.pdf">Cubli Source Code.pdf</a></p>
+]]></content>
+      <categories>
+        <category>Theory</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hardware Design Analysis</title>
     <url>/2024/02/12/Hardware-Design/</url>
     <content><![CDATA[<p>This article briefly outlines the design principle of all the PCB applied in this cube.</p>
@@ -345,7 +357,7 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
   <entry>
     <title>Week 3: Obvious Progress but Greater Challenges.</title>
     <url>/2024/02/18/Week-3/</url>
-    <content><![CDATA[<p>Week 3 refers to the second week of semester 2: [02.12 - 02.18]</p>
+    <content><![CDATA[<p>Week 3 refers to the third week of semester 2: [02.12 - 02.18]</p>
 <p>Normal Group Meeting: 02.17.2024</p>
 <hr />
 <h3 id="cubli-assmbly">#Cubli Assmbly</h3>
@@ -376,7 +388,7 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
 </ul>
 <hr />
 <h3 id="theory-study">#Theory Study</h3>
-<p>This week, we primarily studied various communication protocols, including I2C, CAN and UART. with introducing some knowledge about FreeRTOS and ARHS, which are the basis of Code analysis . For more information, please visit Coding Basis.</p>
+<p>This week, we primarily studied various communication protocols, including I2C, CAN and UART. with introducing some knowledge about FreeRTOS and ARHS, which are the basis of Code analysis . For more information, please visit <a href="https://moxuef.github.io/2024/02/19/Coding-Basis/">Coding Basis</a>.</p>
 ]]></content>
       <categories>
         <category>Weekly Activities</category>
@@ -385,7 +397,29 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
   <entry>
     <title>Week 4: Yes! That&#39;s the Unilateral Balance</title>
     <url>/2024/02/25/Week-4/</url>
-    <content><![CDATA[
+    <content><![CDATA[<p>Week4 refers to the forth week of semester 2: [02.19 - 02.25]</p>
+<p>Normal Group Meeting: 02.24.2024</p>
+<hr />
+<h3 id="unilateral-balance">#Unilateral Balance</h3>
+<p>This week saw the birth of Cubli Unilateral Balance, with its normal motor 2. After appropriate adjustment of parameters, the cube was standing firmly by its edge -- Although a bit unstable.</p>
+<p>Besides, the cube successfully and automatically adjusts to changes in plane slope.</p>
+<video src="/images/Week-4/Edge.mp4" position="absolute" width="85%" height="85%" controls="controls">
+</video>
+<p>However, we still should working on the corner balance.. Feijie has put an urgent order and hope it will arrive in time.</p>
+<hr />
+<span id="more"></span>
+<h3 id="poster-print">#Poster Print</h3>
+<p>This week, our poster is basically completed. To avoid printing with too many other posters then causing congestion, we decided to print it this Friday.</p>
+<hr />
+<h3 id="study-theory">#Study Theory</h3>
+<p>Today, all of us are gathered together to study the final diagram of the firmware of MCU1. It's rReally Complicated but worthy to</p>
+<p>spent time on it. See Firmware Diagram for more information.</p>
+<hr />
+<h3 id="next-week-plan">#Next Week Plan</h3>
+<ul>
+<li>Try to Solve the Corner Balance</li>
+<li><strong>Bench Inspection</strong></li>
+</ul>
 ]]></content>
       <categories>
         <category>Weekly Activities</category>
