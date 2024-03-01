@@ -22,31 +22,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"moxuef.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="This article briefly outlines the principle of balance control for the entire cube.  #Unilateral Balance   System State Variables:  Cube Angle: \(\theta\) Cube Angular Velocity: \(\theta&#39;\)  Syste">
+    <meta name="description" content="This article briefly outlines the principle of Coding Basis for the entire firmware of the cube.  #IMU: Mahony Algorithm (AHRS) # Obtain Error by Exploiting Gravity Alignment First, it should be noted">
 <meta property="og:type" content="article">
-<meta property="og:title" content="”Automatic Control Principles“">
-<meta property="og:url" content="https://moxuef.github.io/2024/02/04/Control-Theory/index.html">
+<meta property="og:title" content="“Coding Basis”">
+<meta property="og:url" content="https://moxuef.github.io/2024/02/19/Coding-Basis/index.html">
 <meta property="og:site_name" content="Cubli">
-<meta property="og:description" content="This article briefly outlines the principle of balance control for the entire cube.  #Unilateral Balance   System State Variables:  Cube Angle: \(\theta\) Cube Angular Velocity: \(\theta&#39;\)  Syste">
+<meta property="og:description" content="This article briefly outlines the principle of Coding Basis for the entire firmware of the cube.  #IMU: Mahony Algorithm (AHRS) # Obtain Error by Exploiting Gravity Alignment First, it should be noted">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://moxuef.github.io/images/Control-Theory/Unilateral.jpg">
-<meta property="og:image" content="https://moxuef.github.io/images/Control-Theory/Corner.jpg">
-<meta property="og:image" content="https://moxuef.github.io/images/Control-Theory/Model.jpg">
-<meta property="article:published_time" content="2024-02-04T23:29:26.000Z">
-<meta property="article:modified_time" content="2024-02-04T23:29:26.000Z">
+<meta property="og:image" content="https://moxuef.github.io/images/Coding-Basis/IIC.jpg">
+<meta property="og:image" content="https://moxuef.github.io/images/Coding-Basis/IIC_Frame.jpg">
+<meta property="article:published_time" content="2024-02-19T23:29:26.000Z">
+<meta property="article:modified_time" content="2024-02-19T23:29:26.000Z">
 <meta property="article:author" content="UoL Y2 Project Group 2P45">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://moxuef.github.io/images/Control-Theory/Unilateral.jpg">
+<meta name="twitter:image" content="https://moxuef.github.io/images/Coding-Basis/IIC.jpg">
 
 
-<link rel="canonical" href="https://moxuef.github.io/2024/02/04/Control-Theory/">
+<link rel="canonical" href="https://moxuef.github.io/2024/02/19/Coding-Basis/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://moxuef.github.io/2024/02/04/Control-Theory/","path":"2024/02/04/Control-Theory/","title":"”Automatic Control Principles“"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://moxuef.github.io/2024/02/19/Coding-Basis/","path":"2024/02/19/Coding-Basis/","title":"“Coding Basis”"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>”Automatic Control Principles“ | Cubli</title>
+<title>“Coding Basis” | Cubli</title>
   
 
 
@@ -215,7 +214,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://moxuef.github.io/2024/02/04/Control-Theory/">
+    <link itemprop="mainEntityOfPage" href="https://moxuef.github.io/2024/02/19/Coding-Basis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -228,12 +227,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="”Automatic Control Principles“ | Cubli">
+      <meta itemprop="name" content="“Coding Basis” | Cubli">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          ”Automatic Control Principles“
+          “Coding Basis”
         </h1>
 
         <div class="post-meta-container">
@@ -244,7 +243,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2024-02-04 23:29:26" itemprop="dateCreated datePublished" datetime="2024-02-04T23:29:26+00:00">2024-02-04</time>
+      <time title="Created: 2024-02-19 23:29:26" itemprop="dateCreated datePublished" datetime="2024-02-19T23:29:26+00:00">2024-02-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -263,14 +262,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>341</span>
+      <span>1k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>4 mins.</span>
     </span>
 </div>
 
@@ -280,73 +279,68 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>This article briefly outlines the principle of balance control for the entire cube.</p>
+    <div class="post-body" itemprop="articleBody"><p>This article briefly outlines the principle of Coding Basis for the entire firmware of the cube.</p>
 <hr />
-<h2 id="unilateral-balance">#Unilateral Balance</h2>
-<p><img src="/images/Control-Theory/Unilateral.jpg" style="zoom:18%;" align=center/></p>
-<ul>
-<li><p>System State Variables:</p>
-<ul>
-<li><p>Cube Angle: <span class="math inline">\(\theta\)</span></p></li>
-<li><p>Cube Angular Velocity: <span class="math inline">\(\theta&#39;\)</span></p></li>
-</ul></li>
-<li><p>System Control Variable:</p>
-<ul>
-<li>Momentum Wheel Angular Velocity: <span class="math inline">\(\omega\)</span></li>
-</ul></li>
-</ul>
-<p>The IMU's X-axis, the momentum wheel's axis of rotation, and the balancing edge are all in the same plane. As a result: <span class="math display">\[
-\begin{align*}
-    \left\{
-        \begin{array}{l}
-        \ \theta = angle_x - angle_e  \\[1ex]
-        \ \theta&#39; = gyro_x \\[1ex]
-        \ \omega&#39; = motorspeed_x \\[1ex]
-    \end{array}
-    \right.
-\end{align*}
-\]</span> <span class="math display">\[
+<h3 id="imu-mahony-algorithm-ahrs">#IMU: Mahony Algorithm (AHRS)</h3>
+<h4 id="obtain-error-by-exploiting-gravity-alignment"># Obtain Error by Exploiting Gravity Alignment</h4>
+<p>First, it should be noted that the Mahony algorithm assumes that the acceleration measured by the accelerometer is entirely provided by gravity, that is, the acceleration produced by the motion of the object itself can be neglected. Under this assumption, if we assume the current attitude of the body is represented by quaternion <span class="math inline">\(q\)</span>, then converting the representation of the gravity vector <span class="math inline">\(g = [0,0,1]\)</span> to the body coordinate system should be: <span class="math inline">\(v = C\{q_t\} · g\)</span>, where <span class="math inline">\(C\{q_t\}\)</span> represents the rotation matrix corresponding to quaternion <span class="math inline">\(q_t = a + bi + cj +dk\)</span>. <span class="math display">\[
 \begin{equation}
-    \Rightarrow \quad Lqr = (angle_x - angle_e) \times  k_p + gyro_x \times k_v + motorspeed_x \times k_s
+C\{q_t\} =\begin{bmatrix}
+1 - 2c^2 - 2d^2 &amp; 2bc - 2ad &amp; 2bd + 2ac\\
+2bc + 2ad &amp; 1 - 2b^2 - 2d^2 &amp; 2cd - 2ab\\
+2bd - 2ac &amp; 2cd + 2ab &amp; 1 - 2b^2 - 2c^2
+\end{bmatrix}
+\end{equation}
+\]</span> Substitute <span class="math inline">\(g = [0,0,1]\)</span>, Then <span class="math inline">\(v = C\{q_t\} · g = [2(bd-ac), 2(cd+ab), 1-2(b^2+c^2)]^T\)</span>.</p>
+<p>We denote the acceleration measured by the accelerometer as <span class="math inline">\(a = [a_x, a_y, a_z]\)</span>. Ideally, if there are no errors, this acceleration <span class="math inline">\(a\)</span> should be equal to the vector <span class="math inline">\(v\)</span>, but in reality, the two vectors do not coincide perfectly, resulting in a certain error <span class="math inline">\(e\)</span>.</p>
+<p>To express this error <span class="math inline">\(e\)</span>, we can use the cross product: <span class="math inline">\(e = a \times v\)</span>. When <span class="math inline">\(a\)</span> and <span class="math inline">\(v\)</span> are normalized to unit vectors, the result reflects the angle between them. More accurately, the error at the next moment <span class="math inline">\(t+1\)</span>​ can be written as: <span class="math display">\[
+\begin{equation}
+e_{t+1} = a_{t+1} \times v(q_{\text{est},t})
+\end{equation}
+\]</span> where <span class="math inline">\(v(q_{\text{est},t})\)</span> is based on the estimated orientation quaternion at the current moment <span class="math inline">\(t\)</span>. Furthermore, the integral of this error up to moment <span class="math inline">\(t+1\)</span>​ is denoted as: <span class="math display">\[
+\begin{equation}
+e_{i,t+1} = e_{i,t} + e_{t+1} \Delta t
+\end{equation}
+\]</span> The integral of the error also participates in subsequent calculations.</p>
+<h4 id="angular-velocity-fusion">#Angular Velocity Fusion</h4>
+<p>At this point, we have calculated the error <span class="math inline">\(e\)</span> observed by the accelerometer. Let the angular velocity provided by the gyroscope be denoted as <span class="math inline">\(w_{t+1}\)</span>. By adding the gyroscope's angular velocity error to the previously mentioned error and adopting the commonly used Proportional-Integral (PI) controller concept in control systems, the corrected angular velocity can be obtained as follows: <span class="math display">\[
+\begin{equation}
+w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
 \end{equation}
 \]</span></p>
 <hr />
 <span id="more"></span>
-<h2 id="corner-balance">#Corner Balance</h2>
-<p>The basic principle is to add control of the Y-axis to unilateral balance.</p>
-<p><img src="/images/Control-Theory/Corner.jpg" style="zoom:15%;" align=center/></p>
-<p>Assuming the current posture is a point balance. Establish a coordinate system based on the three-axis direction of the IMU, with the origin coinciding with the cube's balanced corner. The projections of the momentum wheel center onto the X-Y plane are respectively CH1, CH2, CH3.</p>
-<p><img src="/images/Control-Theory/Model.jpg" style="zoom:5%;" align=center/></p>
-<p>Following equations can be derived according to the model above: <span class="math display">\[
-\begin{align*}
-    \left\{
-        \begin{array}{l}
-        \ s_x = s_{ch2} - (s_{ch3} + s_{ch1}) \cdot sin(30^\circ)  \\[1ex]
-        \ s_y = (s_{ch3} - s_{ch1}) \cdot cos(30^\circ) \\[1ex]
-        \ s_z = s_{ch1} + s_{ch2} + s_{ch3} \\[1ex]
-    \end{array}
-    \right.
-\end{align*}
-\]</span></p>
-<p><span class="math display">\[
+<h3 id="control-lqr-controller">#Control: LQR Controller</h3>
+<p>Optimal control theory primarily focuses on operating dynamical systems at the minimum cost. If the dynamics of the system can be represented by a set of linear differential equations, and its cost is a quadratic functional, such problems are known as Linear-Quadratic (LQ) problems. The solution to these problems is known as a Linear-Quadratic Regulator (LQR).</p>
+<p>The approach involves first defining a cost function, then allowing engineers to set weights, and using mathematical algorithms to find the settings that minimize the cost function. The cost function is generally defined as the sum of the deviations of key measurements (such as flight altitude or process temperature) from their ideal values. The algorithm attempts to adjust parameters to minimize these undesirable deviations. The magnitude of the control actions themselves is also included in the cost function.</p>
+<p>Its easier now to understand the equation appeared in <a href="https://moxuef.github.io/2024/02/04/Control-Theory/">Automatic Control Principles</a> that: <span class="math display">\[
 \begin{equation}
-    \Rightarrow \quad L(qr)_n = (angle_n - angle_{ne}) \times  k_{np} + gyro_n \times k_{nv}+ s_n \times k_{ns} \ (n = x, y, z)
+    \quad L(qr)_n = (angle_n - angle_{ne}) \times  k_{np} + gyro_n \times k_{nv}+ s_n \times k_{ns} \ (n = x, y, z)
 \end{equation}
 \]</span></p>
 <hr />
-<h2 id="regression-calculation">#Regression Calculation</h2>
-<p>Inverse calculation from x, y control to motor speed from the LQR controller equations and geometry relationships.</p>
-<p><span class="math display">\[
-\begin{align*}
-    \left\{
-        \begin{array}{l}
-        \ S_{CH1} = -L_x \cdot sin(30^\circ) - L_y \cdot cos(30^\circ) + \frac{1}{3} L_z  \\[1ex]
-        \ S_{CH2} = L_x + \frac{1}{3} L_z \\[1ex]
-        \ S_{CH3} = -L_x \cdot sin(30^\circ) + L_y \cdot cos(30^\circ) + \frac{1}{3} L_z \\[1ex]
-    \end{array}
-    \right.
-\end{align*}
-\]</span></p>
+<h3 id="coom.-protocol-i2c">#COOM. Protocol: I2C</h3>
+<p>I2C (Inter-Integrated Circuit), also known as IIC, is a two-wire serial bus that adopts a master-slave (one master device and multiple slave devices) bus structure. Each device on the bus has a specific device address to distinguish it from other devices on the same I2C bus.</p>
+<p><img src="/images/Coding-Basis/IIC.jpg" style="zoom:75%;" align=center/></p>
+<h4 id="communication-process">#Communication Process</h4>
+<p>The IIC bus protocol essentially boils down to a few key elements: <strong>start signal</strong>, <strong>stop signal</strong>, <strong>acknowledge signal</strong>, and <strong>data validity</strong>.</p>
+<ol type="1">
+<li><strong>Start Condition</strong>: At the beginning of the communication, the master generates a start condition. This is achieved by pulling the data line (SDA) from high to low while keeping the clock line (SCL) high.</li>
+<li><strong>Send Device Address and R/W bit</strong>: Next, the master transmits the address of the target slave device on the data line. The last bit of the address indicates whether the operation is a read (1) or write (0).</li>
+<li><strong>Wait for Acknowledge Signal (ACK)</strong>: After sending the address and R/W bit, the master releases the data line and waits for an acknowledgment from the slave device. The slave sends an acknowledge signal (ACK) by pulling the data line low, indicating it is ready to receive or send data.</li>
+<li><strong>Data Transfer</strong>:
+<ul>
+<li><strong>Write Operation</strong>: If it's a write operation, the master sends data bytes one by one to the slave device. After each byte, the master waits for an acknowledgment signal from the slave.</li>
+<li><strong>Read Operation</strong>: If it's a read operation, the slave sends data bytes one by one to the master. The master sends an acknowledge signal after receiving each byte, indicating it is ready to receive the next byte.</li>
+</ul></li>
+<li><strong>Stop Condition</strong>: After the completion of data transfer, the master generates a stop condition to end the communication. This is achieved by pulling the data line (SDA) from low to high while the clock line (SCL) remains high.</li>
+<li><strong>Data Validity</strong>: After the receiver gets valid data, it responds to the sender with a signal. The sender, after transmitting a byte (8 bits) of data, releases the data line to receive the acknowledgment during the 9th clock cycle.
+<ul>
+<li>When the SDA is at a low level, it indicates a valid acknowledgment (ACK), signifying successful reception by the receiver</li>
+<li>When the SDA is at a high level, it indicates a not-acknowledged signal (NACK), signifying the receiver did not successfully receive the data.</li>
+</ul></li>
+</ol>
+<p><img src="/images/Coding-Basis/IIC_Frame.jpg" style="zoom:55%;" align=center/></p>
 
     </div>
 
@@ -360,13 +354,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/02/04/Week-1/" rel="prev" title="Week 1: Order Placement & PCB Soldering">
-                  <i class="fa fa-angle-left"></i> Week 1: Order Placement & PCB Soldering
+                <a href="/2024/02/18/Week-3/" rel="prev" title="Week 3: Obvious Progress but Greater Challenges.">
+                  <i class="fa fa-angle-left"></i> Week 3: Obvious Progress but Greater Challenges.
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/02/12/Hardware-Design/" rel="next" title="”Hardware Design Analysis“">
-                  ”Hardware Design Analysis“ <i class="fa fa-angle-right"></i>
+                <a href="/2024/02/25/Week-4/" rel="next" title="Week 4: Yes! That's the Unilateral Balance">
+                  Week 4: Yes! That's the Unilateral Balance <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

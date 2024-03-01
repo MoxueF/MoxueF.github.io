@@ -1,7 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Automatic Control Principles</title>
+    <title>“Coding Basis”</title>
+    <url>/2024/02/19/Coding-Basis/</url>
+    <content><![CDATA[<p>This article briefly outlines the principle of Coding Basis for the entire firmware of the cube.</p>
+<hr />
+<h3 id="imu-mahony-algorithm-ahrs">#IMU: Mahony Algorithm (AHRS)</h3>
+<h4 id="obtain-error-by-exploiting-gravity-alignment"># Obtain Error by Exploiting Gravity Alignment</h4>
+<p>First, it should be noted that the Mahony algorithm assumes that the acceleration measured by the accelerometer is entirely provided by gravity, that is, the acceleration produced by the motion of the object itself can be neglected. Under this assumption, if we assume the current attitude of the body is represented by quaternion <span class="math inline">\(q\)</span>, then converting the representation of the gravity vector <span class="math inline">\(g = [0,0,1]\)</span> to the body coordinate system should be: <span class="math inline">\(v = C\{q_t\} · g\)</span>, where <span class="math inline">\(C\{q_t\}\)</span> represents the rotation matrix corresponding to quaternion <span class="math inline">\(q_t = a + bi + cj +dk\)</span>. <span class="math display">\[
+\begin{equation}
+C\{q_t\} =\begin{bmatrix}
+1 - 2c^2 - 2d^2 &amp; 2bc - 2ad &amp; 2bd + 2ac\\
+2bc + 2ad &amp; 1 - 2b^2 - 2d^2 &amp; 2cd - 2ab\\
+2bd - 2ac &amp; 2cd + 2ab &amp; 1 - 2b^2 - 2c^2
+\end{bmatrix}
+\end{equation}
+\]</span> Substitute <span class="math inline">\(g = [0,0,1]\)</span>, Then <span class="math inline">\(v = C\{q_t\} · g = [2(bd-ac), 2(cd+ab), 1-2(b^2+c^2)]^T\)</span>.</p>
+<p>We denote the acceleration measured by the accelerometer as <span class="math inline">\(a = [a_x, a_y, a_z]\)</span>. Ideally, if there are no errors, this acceleration <span class="math inline">\(a\)</span> should be equal to the vector <span class="math inline">\(v\)</span>, but in reality, the two vectors do not coincide perfectly, resulting in a certain error <span class="math inline">\(e\)</span>.</p>
+<p>To express this error <span class="math inline">\(e\)</span>, we can use the cross product: <span class="math inline">\(e = a \times v\)</span>. When <span class="math inline">\(a\)</span> and <span class="math inline">\(v\)</span> are normalized to unit vectors, the result reflects the angle between them. More accurately, the error at the next moment <span class="math inline">\(t+1\)</span>​ can be written as: <span class="math display">\[
+\begin{equation}
+e_{t+1} = a_{t+1} \times v(q_{\text{est},t})
+\end{equation}
+\]</span> where <span class="math inline">\(v(q_{\text{est},t})\)</span> is based on the estimated orientation quaternion at the current moment <span class="math inline">\(t\)</span>. Furthermore, the integral of this error up to moment <span class="math inline">\(t+1\)</span>​ is denoted as: <span class="math display">\[
+\begin{equation}
+e_{i,t+1} = e_{i,t} + e_{t+1} \Delta t
+\end{equation}
+\]</span> The integral of the error also participates in subsequent calculations.</p>
+<h4 id="angular-velocity-fusion">#Angular Velocity Fusion</h4>
+<p>At this point, we have calculated the error <span class="math inline">\(e\)</span> observed by the accelerometer. Let the angular velocity provided by the gyroscope be denoted as <span class="math inline">\(w_{t+1}\)</span>. By adding the gyroscope's angular velocity error to the previously mentioned error and adopting the commonly used Proportional-Integral (PI) controller concept in control systems, the corrected angular velocity can be obtained as follows: <span class="math display">\[
+\begin{equation}
+w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
+\end{equation}
+\]</span></p>
+<hr />
+<span id="more"></span>
+<h3 id="control-lqr-controller">#Control: LQR Controller</h3>
+<p>Optimal control theory primarily focuses on operating dynamical systems at the minimum cost. If the dynamics of the system can be represented by a set of linear differential equations, and its cost is a quadratic functional, such problems are known as Linear-Quadratic (LQ) problems. The solution to these problems is known as a Linear-Quadratic Regulator (LQR).</p>
+<p>The approach involves first defining a cost function, then allowing engineers to set weights, and using mathematical algorithms to find the settings that minimize the cost function. The cost function is generally defined as the sum of the deviations of key measurements (such as flight altitude or process temperature) from their ideal values. The algorithm attempts to adjust parameters to minimize these undesirable deviations. The magnitude of the control actions themselves is also included in the cost function.</p>
+<p>Its easier now to understand the equation appeared in <a href="https://moxuef.github.io/2024/02/04/Control-Theory/">Automatic Control Principles</a> that: <span class="math display">\[
+\begin{equation}
+    \quad L(qr)_n = (angle_n - angle_{ne}) \times  k_{np} + gyro_n \times k_{nv}+ s_n \times k_{ns} \ (n = x, y, z)
+\end{equation}
+\]</span></p>
+<hr />
+<h3 id="coom.-protocol-i2c">#COOM. Protocol: I2C</h3>
+<p>I2C (Inter-Integrated Circuit), also known as IIC, is a two-wire serial bus that adopts a master-slave (one master device and multiple slave devices) bus structure. Each device on the bus has a specific device address to distinguish it from other devices on the same I2C bus.</p>
+<p><img src="/images/Coding-Basis/IIC.jpg" style="zoom:75%;" align=center/></p>
+<h4 id="communication-process">#Communication Process</h4>
+<p>The IIC bus protocol essentially boils down to a few key elements: <strong>start signal</strong>, <strong>stop signal</strong>, <strong>acknowledge signal</strong>, and <strong>data validity</strong>.</p>
+<ol type="1">
+<li><strong>Start Condition</strong>: At the beginning of the communication, the master generates a start condition. This is achieved by pulling the data line (SDA) from high to low while keeping the clock line (SCL) high.</li>
+<li><strong>Send Device Address and R/W bit</strong>: Next, the master transmits the address of the target slave device on the data line. The last bit of the address indicates whether the operation is a read (1) or write (0).</li>
+<li><strong>Wait for Acknowledge Signal (ACK)</strong>: After sending the address and R/W bit, the master releases the data line and waits for an acknowledgment from the slave device. The slave sends an acknowledge signal (ACK) by pulling the data line low, indicating it is ready to receive or send data.</li>
+<li><strong>Data Transfer</strong>:
+<ul>
+<li><strong>Write Operation</strong>: If it's a write operation, the master sends data bytes one by one to the slave device. After each byte, the master waits for an acknowledgment signal from the slave.</li>
+<li><strong>Read Operation</strong>: If it's a read operation, the slave sends data bytes one by one to the master. The master sends an acknowledge signal after receiving each byte, indicating it is ready to receive the next byte.</li>
+</ul></li>
+<li><strong>Stop Condition</strong>: After the completion of data transfer, the master generates a stop condition to end the communication. This is achieved by pulling the data line (SDA) from low to high while the clock line (SCL) remains high.</li>
+<li><strong>Data Validity</strong>: After the receiver gets valid data, it responds to the sender with a signal. The sender, after transmitting a byte (8 bits) of data, releases the data line to receive the acknowledgment during the 9th clock cycle.
+<ul>
+<li>When the SDA is at a low level, it indicates a valid acknowledgment (ACK), signifying successful reception by the receiver</li>
+<li>When the SDA is at a high level, it indicates a not-acknowledged signal (NACK), signifying the receiver did not successfully receive the data.</li>
+</ul></li>
+</ol>
+<p><img src="/images/Coding-Basis/IIC_Frame.jpg" style="zoom:55%;" align=center/></p>
+]]></content>
+      <categories>
+        <category>Theory</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>”Automatic Control Principles“</title>
     <url>/2024/02/04/Control-Theory/</url>
     <content><![CDATA[<p>This article briefly outlines the principle of balance control for the entire cube.</p>
 <hr />
@@ -76,7 +146,7 @@
       </categories>
   </entry>
   <entry>
-    <title>Hardware Design</title>
+    <title>”Hardware Design Analysis“</title>
     <url>/2024/02/12/Hardware-Design/</url>
     <content><![CDATA[<p>This article briefly outlines the design principle of all the PCB applied in this cube.</p>
 <hr />
@@ -245,6 +315,7 @@
 </ul>
 <p>Fortunately, the environment setup with CLion (MinGW64) + PlatformIO went very smoothly. After configuring, Feijie and Dylan conducted some simple tests, and the results were surprisingly good. Now, it is possible to achieve instant code modifications and flashing. Additionally, Feijie has written a CMake file for compiling this segment of code.</p>
 <hr />
+<span id="more"></span>
 <h3 id="poster-layout-and-blog-documentation">#Poster Layout and Blog Documentation</h3>
 <p>Sid is responsible for meticulously documenting our project's progress and has already commenced the creation of some of the posters. Feijie is enhancing the reading experience by composing the blog through Hexo on Github.</p>
 <p><img src="/images/Week-2/Web.jpg" style="zoom:35%;" align=center/></p>
@@ -272,6 +343,7 @@
 <p><img src="/images/Week-3/Assmbly.jpg" style="zoom:45%;" align=center/></p>
 <hr />
 <h3 id="great-challenge-abnormal-motor-operation-status">#Great Challenge: Abnormal Motor Operation Status</h3>
+<span id="more"></span>
 <p>After the complete assembly of Cubli, serial port debugging revealed that a significant torque caused Cubli to uncontrolledly spin at high speed . This issue was traced back to an imbalance in angular momentum, with one motor (motor 1) rotating more slowly, weaker and less steadily than expected.</p>
 <h4 id="encoder-error"># Encoder Error ?</h4>
 <p>The initial suspicion fell on the magnetic encoder, particularly the AS5600 chip, which was thought to be reading an incorrect angle and thus leading to an erroneous target speed for the motor.</p>
