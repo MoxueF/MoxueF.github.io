@@ -157,7 +157,7 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
   </entry>
   <entry>
     <title>Firmware Diagram</title>
-    <url>/2024/02/23/Firmware-Diagram/</url>
+    <url>/2024/02/25/Firmware-Diagram/</url>
     <content><![CDATA[<p>This article includes a pdf for the whole function of MCU1 Firmware the cube.</p>
 <hr />
 <p><img src="/images/Firmware-Diagram/Cubli Source Code.jpg" style="zoom:100%;" align=center/></p>
@@ -396,7 +396,7 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
   </entry>
   <entry>
     <title>Week 4: Yes! That&#39;s the Unilateral Balance</title>
-    <url>/2024/02/25/Week-4/</url>
+    <url>/2024/02/23/Week-4/</url>
     <content><![CDATA[<p>Week 4 refers to the forth week of semester 2: [02.19 - 02.25]</p>
 <p>Normal Group Meeting: 02.24.2024</p>
 <hr />
