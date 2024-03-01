@@ -235,7 +235,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2024-03-01 08:38:29" itemprop="dateCreated datePublished" datetime="2024-03-01T08:38:29+00:00">2024-03-01</time>
+      <time title="Created: 2024-03-01 08:40:43" itemprop="dateCreated datePublished" datetime="2024-03-01T08:40:43+00:00">2024-03-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -821,11 +821,137 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
 <h3 id="cubli-assmbly">#Cubli Assmbly</h3>
 <p>As expected, the main control board arrived on time after SMT. During this week's lab, we collectively conducted the initial assembly and testing of Cubli. The results were quite successful — at least Cubli has now become a cube, rather than a collection of scattered panels, PCBs, and ribbon cables.</p>
 <p><img src="/images/Week-3/Assmbly.jpg" style="zoom:35%;" align=center/></p>
-<hr />
-<h3 id="great-challenge-abnormal-motor-operation-status">#Great Challenge: Abnormal Motor Operation Status</h3>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/02/18/Week-3/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://moxuef.github.io/2024/02/13/Hardware-Design/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="UoL Y2 Project Group 2P45">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubli">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cubli">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/02/13/Hardware-Design/" class="post-title-link" itemprop="url">Hardware Design Analysis</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-02-13 01:04:29" itemprop="dateCreated datePublished" datetime="2024-02-13T01:04:29+00:00">2024-02-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Theory/" itemprop="url" rel="index"><span itemprop="name">Theory</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>496</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>This article briefly outlines the design principle of all the PCB applied in this cube.</p>
+<hr />
+<h2 id="main-control-board-mcb">#Main Control Board (MCB)</h2>
+<p>The entire main control board can be simply divided into two major parts: signal communication and power supply. The main components of each part are as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Signal Line</th>
+<th style="text-align: center;">Power Line</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="/images/Hardware-Design/Signal.jpg" style="zoom:25%;" align=center/></td>
+<td style="text-align: center;"><img src="/images/Hardware-Design/Battery.jpg" style="zoom:25%;" align=center/></td>
+</tr>
+</tbody>
+</table>
+<p>Simply put, the main control PCB provides:</p>
+<ul>
+<li>2 x ESP32s as Microprocessors -- ①</li>
+<li>3-channel brushless FOC (Field Oriented Control) drive, 12V input -- ②</li>
+<li>A circuit for boosting a 5V input to charge a 3S lithium battery -- ③</li>
+<li>A 3S lithium battery charge and discharge balancing circuit -- ④</li>
+<li>Button input and indicator light output -- ⑤</li>
+<li>CAN communication between MCU1 and MCU2 -- ⑥</li>
+</ul>
+<p><img src="/images/Hardware-Design/MCB.jpg" style="zoom:55%;" align=center/></p>
+<hr />
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/02/13/Hardware-Design/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -940,134 +1066,6 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/02/12/Week-2/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://moxuef.github.io/2024/02/12/Hardware-Design/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="UoL Y2 Project Group 2P45">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cubli">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cubli">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/02/12/Hardware-Design/" class="post-title-link" itemprop="url">Hardware Design Analysis</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-02-12 01:04:29" itemprop="dateCreated datePublished" datetime="2024-02-12T01:04:29+00:00">2024-02-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Theory/" itemprop="url" rel="index"><span itemprop="name">Theory</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>496</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>This article briefly outlines the design principle of all the PCB applied in this cube.</p>
-<hr />
-<h2 id="main-control-board-mcb">#Main Control Board (MCB)</h2>
-<p>The entire main control board can be simply divided into two major parts: signal communication and power supply. The main components of each part are as follows:</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Signal Line</th>
-<th style="text-align: center;">Power Line</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img src="/images/Hardware-Design/Signal.jpg" style="zoom:25%;" align=center/></td>
-<td style="text-align: center;"><img src="/images/Hardware-Design/Battery.jpg" style="zoom:25%;" align=center/></td>
-</tr>
-</tbody>
-</table>
-<p>Simply put, the main control PCB provides:</p>
-<ul>
-<li>2 x ESP32s as Microprocessors -- ①</li>
-<li>3-channel brushless FOC (Field Oriented Control) drive, 12V input -- ②</li>
-<li>A circuit for boosting a 5V input to charge a 3S lithium battery -- ③</li>
-<li>A 3S lithium battery charge and discharge balancing circuit -- ④</li>
-<li>Button input and indicator light output -- ⑤</li>
-<li>CAN communication between MCU1 and MCU2 -- ⑥</li>
-</ul>
-<p><img src="/images/Hardware-Design/MCB.jpg" style="zoom:55%;" align=center/></p>
-<hr />
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/02/12/Hardware-Design/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
