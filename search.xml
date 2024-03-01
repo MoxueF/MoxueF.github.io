@@ -81,7 +81,7 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
       </categories>
   </entry>
   <entry>
-    <title>”Automatic Control Principles“</title>
+    <title>Automatic Control Principles</title>
     <url>/2024/02/04/Control-Theory/</url>
     <content><![CDATA[<p>This article briefly outlines the principle of balance control for the entire cube.</p>
 <hr />
@@ -156,7 +156,7 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
       </categories>
   </entry>
   <entry>
-    <title>”Firmware Diagram“</title>
+    <title>Firmware Diagram</title>
     <url>/2024/02/23/Firmware-Diagram/</url>
     <content><![CDATA[<p>This article includes a pdf for the whole function of MCU1 Firmware the cube.</p>
 <hr />
@@ -397,7 +397,7 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
   <entry>
     <title>Week 4: Yes! That&#39;s the Unilateral Balance</title>
     <url>/2024/02/25/Week-4/</url>
-    <content><![CDATA[<p>Week4 refers to the forth week of semester 2: [02.19 - 02.25]</p>
+    <content><![CDATA[<p>Week 4 refers to the forth week of semester 2: [02.19 - 02.25]</p>
 <p>Normal Group Meeting: 02.24.2024</p>
 <hr />
 <h3 id="unilateral-balance">#Unilateral Balance</h3>
@@ -413,7 +413,7 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
 <hr />
 <h3 id="study-theory">#Study Theory</h3>
 <p>Today, all of us are gathered together to study the final diagram of the firmware of MCU1. It's rReally Complicated but worthy to</p>
-<p>spent time on it. See Firmware Diagram for more information.</p>
+<p>spent time on it. See <a href="https://moxuef.github.io/2024/02/23/Firmware-Diagram/">Firmware Diagram</a> for more information.</p>
 <hr />
 <h3 id="next-week-plan">#Next Week Plan</h3>
 <ul>
@@ -427,8 +427,22 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
   </entry>
   <entry>
     <title>Week 5: Corner Balance and Bench Inspection</title>
-    <url>/2024/02/04/Week-5/</url>
-    <content><![CDATA[
+    <url>/2024/02/27/Week-5/</url>
+    <content><![CDATA[<p>Week 5 refers to the fifth week of semester 2: [02.26 - 03.03]</p>
+<p>Normal Group Meeting: 02.29.2024</p>
+<hr />
+<h3 id="final-poster-display">#Final Poster Display:</h3>
+<p><img src="/images/Week-5/Poster.jpg" style="zoom:55%;" align=center/></p>
+<h3 id="corner-balance-of-the-cube">#Corner Balance of the Cube</h3>
+<p>Finally, the Cube is able to stand at its corner right before the bench inspection.</p>
+<p><img src="/images/Week-5/Cubli.jpg" style="zoom:55%;" align=center/></p>
+<hr />
+<h3 id="next-week-plan">#Next Week Plan:</h3>
+<ul>
+<li>Start working on the report</li>
+<li>Keep on Keeping on</li>
+</ul>
+<hr />
 ]]></content>
       <categories>
         <category>Weekly Activities</category>
