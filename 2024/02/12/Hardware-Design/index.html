@@ -346,8 +346,9 @@
 <h2 id="battery-control">#Battery Control</h2>
 <p>The battery control section is mainly divided into two parts: a 5V-to-12V boost charging module and a battery balancer.</p>
 <p>The former one is a bit complicated and will not be covered in this blog. All we should know is that this module applies a <a target="_blank" rel="noopener" href="https://pdf1.alldatasheet.com/datasheet-pdf/view/1133224/CONSONANCE/CN3300.html">CN3300</a></p>
-<p>battery power management chip,</p>
-<p>For the latter part: #### ##Battery Balancer</p>
+<p>battery power management chip.</p>
+<p>For the latter part:</p>
+<h4 id="battery-balancer">##Battery Balancer</h4>
 <p>Since there are 3 lithium batteries, the main control board includes a passive balancing circuit as follows:</p>
 <p><img src="/images/Hardware-Design/BB.jpg" style="zoom:65%;" align=center/></p>
 <p>The IC determines whether to activate the corresponding balancing MOSFETs to balance the battery by continuously monitoring the voltage between VDD and VSS. When necessary, it drains current from the battery cell through internal transistors to an external resistor (RBAL1, RBAL2, RBAL3), thereby reducing the voltage of that cell.</p>
