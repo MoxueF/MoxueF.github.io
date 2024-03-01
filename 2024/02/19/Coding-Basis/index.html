@@ -24,13 +24,14 @@
 
     <meta name="description" content="This article briefly outlines the principle of Coding Basis for the entire firmware of the cube.  #IMU: Mahony Algorithm (AHRS) # Obtain Error by Exploiting Gravity Alignment First, it should be noted">
 <meta property="og:type" content="article">
-<meta property="og:title" content="“Coding Basis”">
+<meta property="og:title" content="Coding Basis">
 <meta property="og:url" content="https://moxuef.github.io/2024/02/19/Coding-Basis/index.html">
 <meta property="og:site_name" content="Cubli">
 <meta property="og:description" content="This article briefly outlines the principle of Coding Basis for the entire firmware of the cube.  #IMU: Mahony Algorithm (AHRS) # Obtain Error by Exploiting Gravity Alignment First, it should be noted">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://moxuef.github.io/images/Coding-Basis/IIC.jpg">
 <meta property="og:image" content="https://moxuef.github.io/images/Coding-Basis/IIC_Frame.jpg">
+<meta property="og:image" content="https://moxuef.github.io/images/Coding-Basis/UART.jpg">
 <meta property="article:published_time" content="2024-02-19T23:29:26.000Z">
 <meta property="article:modified_time" content="2024-02-19T23:29:26.000Z">
 <meta property="article:author" content="UoL Y2 Project Group 2P45">
@@ -42,10 +43,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://moxuef.github.io/2024/02/19/Coding-Basis/","path":"2024/02/19/Coding-Basis/","title":"“Coding Basis”"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://moxuef.github.io/2024/02/19/Coding-Basis/","path":"2024/02/19/Coding-Basis/","title":"Coding Basis"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>“Coding Basis” | Cubli</title>
+<title>Coding Basis | Cubli</title>
   
 
 
@@ -227,12 +228,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="“Coding Basis” | Cubli">
+      <meta itemprop="name" content="Coding Basis | Cubli">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          “Coding Basis”
+          Coding Basis
         </h1>
 
         <div class="post-meta-container">
@@ -262,14 +263,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>1k</span>
+      <span>1.1k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>4 mins.</span>
+      <span>5 mins.</span>
     </span>
 </div>
 
@@ -341,6 +342,16 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
 </ul></li>
 </ol>
 <p><img src="/images/Coding-Basis/IIC_Frame.jpg" style="zoom:55%;" align=center/></p>
+<hr />
+<h3 id="coom.-protocol-uart">#COOM. Protocol: UART</h3>
+<p>Universal Asynchronous Receiver/Transmitter, often called UART, is a serial, asynchronous, full-duplex communication protocol.</p>
+<p>The working principle is to transmit each binary bit of the transmitted data one bit after another. In the UART communication protocol, when the status on the signal line is high level, it represents '1', and when the status on the signal line is low level, it represents '0'. For example, when using the UART communication protocol to transmit one byte of data, eight combinations of high and low levels are generated on the signal line.</p>
+<p><img src="/images/Coding-Basis/UART.jpg" style="zoom:100%;" align=center/></p>
+<hr />
+<p>Additional:</p>
+<h3 id="microcontroller-operating-system-freertos">#Microcontroller Operating system: FreeRTOS</h3>
+<h3 id="coom.-protocol-can">#COOM. Protocol: CAN</h3>
+<hr />
 
     </div>
 
@@ -400,7 +411,7 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">13 mins.</span>
+    <span title="Reading time total">14 mins.</span>
   </span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>

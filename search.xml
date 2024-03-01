@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>“Coding Basis”</title>
+    <title>Coding Basis</title>
     <url>/2024/02/19/Coding-Basis/</url>
     <content><![CDATA[<p>This article briefly outlines the principle of Coding Basis for the entire firmware of the cube.</p>
 <hr />
@@ -65,6 +65,16 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
 </ul></li>
 </ol>
 <p><img src="/images/Coding-Basis/IIC_Frame.jpg" style="zoom:55%;" align=center/></p>
+<hr />
+<h3 id="coom.-protocol-uart">#COOM. Protocol: UART</h3>
+<p>Universal Asynchronous Receiver/Transmitter, often called UART, is a serial, asynchronous, full-duplex communication protocol.</p>
+<p>The working principle is to transmit each binary bit of the transmitted data one bit after another. In the UART communication protocol, when the status on the signal line is high level, it represents '1', and when the status on the signal line is low level, it represents '0'. For example, when using the UART communication protocol to transmit one byte of data, eight combinations of high and low levels are generated on the signal line.</p>
+<p><img src="/images/Coding-Basis/UART.jpg" style="zoom:100%;" align=center/></p>
+<hr />
+<p>Additional:</p>
+<h3 id="microcontroller-operating-system-freertos">#Microcontroller Operating system: FreeRTOS</h3>
+<h3 id="coom.-protocol-can">#COOM. Protocol: CAN</h3>
+<hr />
 ]]></content>
       <categories>
         <category>Theory</category>
@@ -146,7 +156,7 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
       </categories>
   </entry>
   <entry>
-    <title>”Hardware Design Analysis“</title>
+    <title>Hardware Design Analysis</title>
     <url>/2024/02/12/Hardware-Design/</url>
     <content><![CDATA[<p>This article briefly outlines the design principle of all the PCB applied in this cube.</p>
 <hr />
@@ -340,7 +350,7 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
 <hr />
 <h3 id="cubli-assmbly">#Cubli Assmbly</h3>
 <p>As expected, the main control board arrived on time after SMT. During this week's lab, we collectively conducted the initial assembly and testing of Cubli. The results were quite successful — at least Cubli has now become a cube, rather than a collection of scattered panels, PCBs, and ribbon cables.</p>
-<p><img src="/images/Week-3/Assmbly.jpg" style="zoom:45%;" align=center/></p>
+<p><img src="/images/Week-3/Assmbly.jpg" style="zoom:35%;" align=center/></p>
 <hr />
 <h3 id="great-challenge-abnormal-motor-operation-status">#Great Challenge: Abnormal Motor Operation Status</h3>
 <span id="more"></span>
