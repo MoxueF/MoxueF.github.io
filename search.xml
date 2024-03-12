@@ -246,7 +246,7 @@ w_{t+1} = w_{t+1} + K_p e_{t+1} + K_i e_{i,t+1}
   </entry>
   <entry>
     <title>Intro</title>
-    <url>/2024/03/01/Intro/</url>
+    <url>/2024/03/12/Intro/</url>
     <content><![CDATA[<h3 id="embarking-on-a-robotic-revolution"><strong>#Embarking on a Robotic Revolution</strong></h3>
 <p>This blog chronicles the evolution of our project, Cubli, under the meticulous guidance of our Academic Advisors, Dr. Simon Maher and Dr. Barry Smith. Our team comprises Sidharth Babani, Feijie Jia, Yuanpeng Li, and Shaoxiang Wang (Sort alphabetically by last name) .</p>
 <hr />
